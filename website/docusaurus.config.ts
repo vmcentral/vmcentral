@@ -65,7 +65,21 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
+    announcementBar: {
+      id: 'support_us',
+      content:
+        'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
+      backgroundColor: '#F5F5F5',
+      textColor: '#212121',
+      isCloseable: false,
+    },
     navbar: {
+      hideOnScroll: true,
       title: 'vmcentral',
       logo: {
         alt: 'vmcentral logo',
@@ -80,14 +94,30 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
+          type: 'docsVersionDropdown',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
           position: 'right',
+          className: 'github-link',
         },
       ],
     },
     footer: {
-      style: 'dark',
+      logo: {
+        alt: 'Meta Open Source Logo',
+        src: 'img/logo.svg',
+        href: 'https://opensource.fb.com',
+        width: 160,
+        height: 60,
+      },
+      style: 'light',
       links: [
         {
           title: 'Docs',
@@ -130,12 +160,12 @@ const config: Config = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} VMCENTRAL`,
-    },
+      },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-    },
-  } satisfies Preset.ThemeConfig,
+      },
+    } satisfies Preset.ThemeConfig,
 };
 
 export default config;
