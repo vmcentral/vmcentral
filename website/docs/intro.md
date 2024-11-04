@@ -1,9 +1,11 @@
 ---
 sidebar_position: 1
 slug: /
+tags:
+  - vmcentral
 ---
 
-# Tutorial Intro
+# Documentation
 
 Let's discover **Docusaurus in less than 5 minutes**.
 

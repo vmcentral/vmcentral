@@ -18,14 +18,24 @@
   background-color: whitesmoke;
 }
 
-.pagination-nav {
-  display: flex;
-  text-decoration: solid;
+.pagination-nav a{
+  color: #212121;
+  border: none;
+  outline: none;
+  background-color: #F5F5F5;
+  border-radius: 1rem;
+  box-shadow:
+    -3px -10px 15px #ffffff,
+    -3px -5px 10px #ffffff,
+    -10px 0px 15px #ffffff,
+    3px 10px 12px rgba(0, 0, 0, 0.2);
 }
 
-.pagination-nav a{
-  color: whitesmoke;
-  text-align: center;
-  background-color: #212121;
-  border: none;
+.pagination-nav__sublabel {
+  color: #212121;
+}
+
+.github-link {
+  color: var(--ifm-color-primary);
+  background-color: #F5F5F5;
 }
