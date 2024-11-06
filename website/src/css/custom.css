@@ -35,7 +35,24 @@
   color: #212121;
 }
 
-.github-link {
-  color: var(--ifm-color-primary);
+.navbar {
   background-color: #F5F5F5;
+  font-size: x-large;
+  box-shadow: none;
+}
+
+.title {
+  font-size: xx-large;
+  font-family: 'sans-serif';
+  color: #ffffff;
+  text-align: center;
+  text-decoration: solid;
+}
+
+.subtitle {
+  font-size: large;
+  font-family: 'sans-serif';
+  color: #ffffff;
+  text-align: center;
+  text-decoration: solid;
 }

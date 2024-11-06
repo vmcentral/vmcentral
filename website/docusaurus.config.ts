@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import Link from '@docusaurus/Link'
 
 const config: Config = {
   title: 'vmcentral',
@@ -31,14 +32,11 @@ const config: Config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
@@ -46,11 +44,6 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -61,9 +54,12 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
+  plugins: ['@docusaurus/theme-live-codeblock'],
   themeConfig: {
-    // Replace with your project's social card
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    liveCodeBlock: {
+      playgroundPosition: 'bottom',
+    },
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       defaultMode: 'light',
@@ -76,7 +72,7 @@ const config: Config = {
         'We are looking our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
       backgroundColor: '#F5F5F5',
       textColor: '#212121',
-      isCloseable: true,
+      isCloseable: false,
     },
     navbar: {
       hideOnScroll: true,
@@ -84,6 +80,11 @@ const config: Config = {
       logo: {
         alt: 'vmcentral logo',
         src: 'img/logo.svg',
+        href: '/',
+        width: 38,
+        height: 38,
+        className: 'custom-navbar-logo-class',
+        style: {border: 'solid red'},
       },
       items: [
         {
