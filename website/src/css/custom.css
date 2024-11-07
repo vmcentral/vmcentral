@@ -32,13 +32,32 @@
 }
 
 .pagination-nav__sublabel {
-  color: #212121;
+  display: none;
+}
+
+.pagination-nav__link--next .pagination-nav__label::after {
+  content: ' ›';
+  margin-left: 4px;
+}
+
+.pagination-nav__link--prev .pagination-nav__label::before {
+  content: ' ‹';
+  margin-right: 4px;
 }
 
 .navbar {
   background-color: #F5F5F5;
-  font-size: x-large;
   box-shadow: none;
+}
+
+.navbar__item,
+.menu__link {
+  font-size: 16px;
+  color: #212121;
+}
+
+.menu__list-item-collapsible:hover {
+  background: none;
 }
 
 .title {
@@ -55,4 +74,93 @@
   color: #ffffff;
   text-align: center;
   text-decoration: solid;
+}
+
+.sections-menu-trigger:hover {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sections-menu-trigger,
+.sections-menu-item {
+  padding: 0 15px;
+  padding-left: 10px;
+}
+
+.sections-menu-scrollButton {
+  height: 16px;
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  color: var(--docs-color-text);
+  cursor: default;
+}
+
+.sections-menu-item {
+  box-sizing: border-box;
+  min-width: 200px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+
+  cursor: pointer;
+}
+
+.sections-menu-item:hover {
+  background-color: var(--docs-color-background-200);
+}
+
+.sections-menu-item[data-disabled] {
+  cursor: not-allowed;
+  background-color: var(--docs-color-border);
+}
+
+.sections-menu-trigger .item-indicator,
+.sections-menu-item .item-indicator {
+  height: 20px;
+  width: 20px;
+  color: theme('colors.primary.100');
+}
+
+.sections-menu-trigger .item-text,
+.sections-menu-item .item-text {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.sections-menu-trigger .item-text > svg,
+.sections-menu-item .item-text > svg {
+  height: 32px;
+  width: 32px;
+  margin-right: 8px;
+}
+
+.sections-menu-content {
+  box-sizing: border-box;
+  background-color: var(--docs-color-background-100);
+  border-radius: 6px;
+  padding: 6px 0;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sections-menu-trigger.compact {
+  min-width: 5rem;
+  height: 2.5rem;
+}
+
+.sections-menu-content.compact {
+  width: 5rem;
+  min-width: 5rem;
+}
+
+.compact .sections-menu-item {
+  min-width: initial;
+  height: 2.5rem;
+  width: auto;
 }
