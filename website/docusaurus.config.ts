@@ -6,7 +6,7 @@ import Link from '@docusaurus/Link'
 const config: Config = {
   title: 'vmcentral',
   tagline: 'vmcentral are cool',
-  favicon: 'img/favicon.ico',
+  favicon: 'logo/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
@@ -79,12 +79,9 @@ const config: Config = {
       title: 'vmcentral',
       logo: {
         alt: 'vmcentral logo',
-        src: 'img/logo.svg',
+        src: 'logo/vm.svg',
         href: '/',
-        width: 38,
-        height: 38,
-        className: 'custom-navbar-logo-class',
-        style: {border: 'solid red'},
+        className: 'logo-navbar',
       },
       items: [
         {
@@ -105,10 +102,8 @@ const config: Config = {
     footer: {
       logo: {
         alt: 'Meta Open Source Logo',
-        src: 'img/logo.svg',
-        href: 'https://opensource.fb.com',
-        width: 160,
-        height: 60,
+        src: 'logo/vm.svg',
+        className: 'logo-footer',
       },
       style: 'light',
       links: [

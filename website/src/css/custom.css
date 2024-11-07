@@ -50,6 +50,10 @@
   box-shadow: none;
 }
 
+.navbar__title {
+  display: none;
+}
+
 .navbar__item,
 .menu__link {
   font-size: 16px;
