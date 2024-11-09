@@ -4,6 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'VMCENTRAL',
+  staticDirectories: ['public', 'static'],
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
   url: 'https://github.com',

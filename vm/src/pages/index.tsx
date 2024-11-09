@@ -28,6 +28,14 @@ function HomepageHeader() {
   );
 }
 
+function MyComponent() {
+  return (
+    <main>
+      <h1 className="purple-text">Purple Heading!</h1>
+    </main>
+  );
+}
+
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -35,6 +43,7 @@ export default function Home(): JSX.Element {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
+      <MyComponent />
       <main>
         <HomepageFeatures />
       </main>
