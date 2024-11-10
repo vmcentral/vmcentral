@@ -3,9 +3,9 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'VMCENTRAL',
+  title: 'vmcentral',
   staticDirectories: ['public', 'static'],
-  tagline: 'Dinosaurs are cool',
+  tagline: 'vmcentral web',
   favicon: 'img/favicon.ico',
   url: 'https://github.com',
   baseUrl: '/',
@@ -66,9 +66,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'vmcentral',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'vm logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -79,6 +79,7 @@ const config: Config = {
           position: 'left',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/resources/about', label: 'About', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',

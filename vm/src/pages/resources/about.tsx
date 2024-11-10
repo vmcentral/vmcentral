@@ -1,9 +1,9 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
-export default function Hello() {
+export default function About() {
   return (
-    <Layout title="Hello" description="Hello React Page">
+    <Layout title="About" description="About Me">
       <div
         style={{
           display: 'flex',
