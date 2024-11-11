@@ -25,24 +25,30 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: 'sidebars.ts',
         },
         blog: {
-          showReadingTime: true,
+          blogTitle: 'Articles',
+          blogDescription: 'Articles vmcentral',
+          postsPerPage: 'ALL',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+          showReadingTime: true, // When set to false, the "x min read" won't be shown
           readingTime: ({content, frontMatter, defaultReadingTime}) =>
             defaultReadingTime({content, options: {wordsPerMinute: 300}}),
           feedOptions: {
-            type: ['rss', 'atom', 'json'],
-            xslt: true,
-            copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
+            type: 'all',
+            copyright: `Copyright © ${new Date().getFullYear()} vmcentral.`,
             createFeedItems: async (params) => {
               const {blogPosts, defaultCreateFeedItems, ...rest} = params;
               return defaultCreateFeedItems({
+                // keep only the 10 most recent blog posts in the feed
                 blogPosts: blogPosts.filter((item, index) => index < 10),
                 ...rest,
               });
             },
           },
+
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -56,8 +62,8 @@ const config: Config = {
   themeConfig: {
     docs: {
       sidebar: {
-        hideable: false,
-        autoCollapseCategories: false,
+        hideable: true,
+        autoCollapseCategories: true,
       },
     },
     colorMode: {
@@ -73,17 +79,52 @@ const config: Config = {
       },
       items: [
         {
-          activeBasePath: 'docs',
+          type: 'dropdown',
           label: 'Documentation',
-          to: 'docs',
           position: 'left',
+          items: [
+            {
+              label: 'Docs',
+              to: 'docs',
+            },
+            {
+              label: 'ESX',
+              to: 'docs',
+            },
+            {
+              label: 'QBCORE',
+              to: 'docs',
+            },
+            {
+              label: 'VRP',
+              to: 'docs',
+            },
+          ],
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {to: '/resources/about', label: 'About', position: 'left'},
+        { to: 'blog', label: 'Articles', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          type: 'dropdown',
+          label: 'Resources',
+          position: 'left',
+          items: [
+            {
+              label: 'About',
+              to: '/resources/about',
+            },
+            {
+              label: 'Services',
+              to: '/resources/services',
+            },
+            {
+              label: 'Community',
+              to: '/resources/community',
+            },
+          ],
+        },
+        {
           label: 'GitHub',
           position: 'right',
+          to: 'https://github.com/facebook/docusaurus',
         },
       ],
     },

@@ -8,19 +8,27 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
+        <div className="hero__pretext">
+          <span>Hands-on tutorial 🔥</span>
+        </div>
         <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+          Get Started With Docs Site
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">
+          Docs Site is a comprehensive platform designed to help you create,
+          manage, organize and share documentation effortlessly. Whether you're
+          a developer, writer, or project manager.
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            to="/docs/intro"
+            style={{ alignSelf: "left" }}
+          >
+            Let's Explore - 5min ⏱️
           </Link>
         </div>
       </div>
