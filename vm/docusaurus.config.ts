@@ -25,9 +25,33 @@ const config: Config = {
       'classic',
       {
         docs: {
+          admonitions: {
+            keywords: [
+                'info',
+                'success',
+                'danger',
+                'note',
+                'tip',
+                'warning',
+                'important',
+                'caution',
+            ],
+        },
           sidebarPath: 'sidebars.ts',
         },
         blog: {
+          admonitions: {
+            keywords: [
+                'info',
+                'success',
+                'danger',
+                'note',
+                'tip',
+                'warning',
+                'important',
+                'caution',
+            ],
+        },
           blogTitle: 'Articles',
           blogDescription: 'Articles vmcentral',
           postsPerPage: 'ALL',
@@ -79,27 +103,9 @@ const config: Config = {
       },
       items: [
         {
-          type: 'dropdown',
           label: 'Documentation',
           position: 'left',
-          items: [
-            {
-              label: 'Docs',
-              to: 'docs',
-            },
-            {
-              label: 'ESX',
-              to: 'docs',
-            },
-            {
-              label: 'QBCORE',
-              to: 'docs',
-            },
-            {
-              label: 'VRP',
-              to: 'docs',
-            },
-          ],
+          to: 'docs',
         },
         { to: 'blog', label: 'Articles', position: 'left' },
         {
@@ -132,7 +138,7 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Document & Articles',
           items: [
             {
               label: 'Tutorial',
@@ -158,7 +164,7 @@ const config: Config = {
           ],
         },
         {
-          title: 'More',
+          title: 'Resources',
           items: [
             {
               label: 'Blog',
