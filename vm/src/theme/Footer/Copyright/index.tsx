@@ -1,14 +1,13 @@
 import React from 'react';
-import Copyright from '@theme-original/Footer/Copyright';
-import type CopyrightType from '@theme/Footer/Copyright';
-import type {WrapperProps} from '@docusaurus/types';
+import type {Props} from '@theme/Footer/Copyright';
 
-type Props = WrapperProps<typeof CopyrightType>;
-
-export default function CopyrightWrapper(props: Props): JSX.Element {
+export default function FooterCopyright({copyright}: Props): JSX.Element {
   return (
-    <>
-      <Copyright {...props} />
-    </>
+    <div
+      className="footer__copyright"
+      // Developer provided the HTML, so assume it's safe.
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{__html: copyright}}
+    />
   );
 }

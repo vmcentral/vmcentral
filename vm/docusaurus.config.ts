@@ -11,7 +11,7 @@ const config: Config = {
   baseUrl: '/',
   organizationName: 'vm',
   projectName: 'vm',
-
+  trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -57,8 +57,8 @@ const config: Config = {
           postsPerPage: 'ALL',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
-          showReadingTime: true, // When set to false, the "x min read" won't be shown
-          readingTime: ({content, frontMatter, defaultReadingTime}) =>
+          showReadingTime: true,
+          readingTime: ({content, defaultReadingTime}) =>
             defaultReadingTime({content, options: {wordsPerMinute: 300}}),
           feedOptions: {
             type: 'all',
@@ -67,7 +67,7 @@ const config: Config = {
               const {blogPosts, defaultCreateFeedItems, ...rest} = params;
               return defaultCreateFeedItems({
                 // keep only the 10 most recent blog posts in the feed
-                blogPosts: blogPosts.filter((item, index) => index < 10),
+                blogPosts: blogPosts.filter((_, index) => index < 10),
                 ...rest,
               });
             },
@@ -151,15 +151,15 @@ const config: Config = {
           items: [
             {
               label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              to: 'https://stackoverflow.com/questions/tagged/docusaurus',
             },
             {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              to: 'https://discordapp.com/invite/docusaurus',
             },
             {
               label: 'X',
-              href: 'https://x.com/docusaurus',
+              to: 'https://x.com/docusaurus',
             },
           ],
         },
@@ -172,7 +172,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              to: 'https://github.com/facebook/docusaurus',
             },
           ],
         },
